@@ -1,1 +1,21 @@
+# Minimize no of prints
+print("    *\n   * *\n  *   *\n *     *\n***   ***\n  *   *\n  *   *\n  *****")
 
+# Make the arrow twice as large
+print("    *\n\n   * *\n\n  *   *\n\n *     *\n\n***   ***\n\n  *   *\n\n  *   *\n\n  *****")
+
+# duplicate the arrow
+print("    *" *2)
+print("   * *" *2)
+print("  *   *" *2)
+print(" *     *" *2)
+print("***   ***" *2)
+print("  *   *" *2)
+print("  *   *" *2)
+print("  *****" *2)
+
+# Error - Quote same line, Parenthesis next line
+
+# functions are case sensitive
+
+# You can use either, however it has to be used in pairs and cannot be mixed.
