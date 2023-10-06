@@ -17,26 +17,109 @@ print(y)
 
 #2.6.1.11.py
 
-#2.6.1.11.py
-
 #Your task is to prepare a simple code able to evaluate the end time of a period of time, given as a number of minutes (it could be arbitrarily large). The start time is given as a pair of hours (0..23) and minutes (0..59). The result has to be printed to the console.
 #For example, if an event starts at 12:17 and lasts 59 minutes, it will end at 13:16.
 #Don't worry about any imperfections in your code ‒ it's okay if it accepts an invalid time ‒ the most important thing is that the code produces valid results for valid input data.
 #Test your code carefully. Hint: using the % operator may be the key to success.
 
-print("CONFERENCE ROOM BOOKING ENQUIRY")
+print("CONFERENCE ROOM BOOKING ENQUIRY")                    #
+print()
+print()
 print("What time did the current meeting start?")
-
+print()
 hour = int(input("Starting time (hours): "))
 mins = int(input("Starting time (minutes): "))
 dura = int(input("Event duration (minutes): "))
 
+#Firstly add the duration to the starting mins, this will give the end time in mins
 a = mins+dura
+
+#Floor division will be used to convert the mins into hours (remainder will be ignored at this point). If a < 60 the result will be 0, so end time "hh" will remain same.
 x = a // 60
+
+#The end time in hrs (hh:mm format) will be calculated using the start hh + (result from floor division on line 21). Modulus % has been used to ensure the "hh" doesn't exceed 24.
+#If the result is 24, the finish time in "hh" will be 0, which would be the result of 24%24.
 y = ((hour + x)%24)
+
+#To represent the end time in "mm" (hh:mm format) will be calculated using (result of line 18 - 60). (The final result)%60 ensures "mm" doesn't exceed 60.
+#If the final result is 60, the finish time in "mm" will be 0, which would be the result of 60%60.
 z = ((a - 60)%60)
 
 print()
 print("This event will conclude @", y, ":", z , end=" ")
-print(", so the conference room should be ready for the next meeting by", end=" ")
+print(", so the conference room can be used after", end=" ")
+
+#The will be event conclude time + 1 hour
 print(y+1, ":", z , "hrs")
+print()
+print()
+print("Thank you for your enquiry. Please get in touch if you require any further information.")
+
+
+
+#3.1.10
+
+#Spathiphyllum, more commonly known as a peace lily or white sail plant, is one of the most popular indoor houseplants that filters out harmful toxins from the air. Some of the toxins that it neutralizes include benzene, formaldehyde, and ammonia.
+#Imagine that your computer program loves these plants. Whenever it receives an input in the form of the word Spathiphyllum, it involuntarily shouts to the console the following string: "Spathiphyllum is the best plant ever!"
+#Write a program that utilizes the concept of conditional execution, takes a string as input, and:
+
+#prints the sentence "Yes - Spathiphyllum is the best plant ever!" to the screen if the inputted string is "Spathiphyllum" (upper-case)
+#prints "No, I want a big Spathiphyllum!" if the inputted string is "spathiphyllum" (lower-case)
+#prints "Spathiphyllum! Not [input]!" otherwise. Note: [input] is the string taken as input.
+
+#Test your code using the data we've provided for you. And get yourself a Spathiphyllum, too!
+
+#User will be asked to input the name of the plant
+flower = input("Name a plant:")
+
+#Elif statement was used as there are more than one condition and it will stop as soon as the first statement = True is found.
+
+#Name a plant: Spathiphyllum will return the output in line 18.
+if flower == "Spathiphyllum":
+    print("Yes - Spathiphyllum is the best plant ever!")
+    
+#Name a plant: spathiphyllum will return the output in line 22.    
+elif flower == "spathiphyllum":
+    print("No, I want a big Spathiphyllum!")
+    
+#Any input other than Spathiphyllum or spathiphyllum will return the output in line 26.
+else:
+    print("Spathiphyllum! Not", flower, "!!!")
+
+
+
+#3.1.11
+
+
+#Once upon a time there was a land - a land of milk and honey, inhabited by happy and prosperous people. The people paid taxes, of course - their happiness had limits.
+#The most important tax, called the Personal Income Tax (PIT for short) had to be paid once a year, and was evaluated using the following rule:
+
+#if the citizen's income was not higher than 85,528 thalers, the tax was equal to 18% of the income minus 556 thalers and 2 cents (this was the so-called tax relief)
+#if the income was higher than this amount, the tax was equal to 14,839 thalers and 2 cents, plus 32% of the surplus over 85,528 thalers.
+
+#Your task is to write a tax calculator.
+#It should accept one floating-point value: the income.
+#Next, it should print the calculated tax, rounded to full thalers. There's a function named round() which will do the rounding for you - you'll find it in the skeleton code in the editor.
+#Note: this happy country never returns money to its citizens. If the calculated tax is less than zero, it only means no tax at all (the tax is equal to zero). Take this into consideration during your calculations.
+
+#Look at the code in the editor - it only reads one input value and outputs a result, so you need to complete it with some smart calculations.
+
+#Test your code using the data we've provided.
+
+income = float(input("Enter the annual income: "))
+
+#Calculation for lower tax band
+l_tax = 18/100 * income - 556.2
+l_tax = round(l_tax, 0)             #This will funtion will round up/down the result.
+
+#Calculation for higher tax band
+h_tax = 14839.2 + (32/100*(income-85528))
+h_tax = round(h_tax, 0)
+
+#If income is less or equal to 85525 Thalers it will print the output in line 26.
+if income <= 85528:
+    print("The tax is:", l_tax, "thalers")
+
+#Else it will print the output in line 30.
+else:
+    print("The tax is:", h_tax, "thalers")
