@@ -1,0 +1,30 @@
+#3.2.9
+
+
+#The break statement is used to exit/terminate a loop.
+
+#Design a program that uses a while loop and continuously asks the user to enter a word unless the user enters "chupacabra" as the secret exit word, 
+#in which case the message "You've successfully left the loop." should be printed to the screen, and the loop should terminate.
+
+#Don't print any of the words entered by the user. Use the concept of conditional execution and the break statement.
+
+from getpass import getpass
+
+code = getpass("Enter the password:"
+
+while True:
+    if code != "chupacabra":
+        counter -= 1
+        code = getpass("Enter the password:")
+        
+        print("You now have", counter, "attemps left.")
+    
+    else:
+        print("You've successfully left the loop.")
+        break
+
+
+
+
+
+#3.2.10
