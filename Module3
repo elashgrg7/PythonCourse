@@ -1,0 +1,95 @@
+#3.4.11
+
+#Scenario
+#The Beatles were one of the most popular music groups of the 1960s, 
+#and the best-selling band in history. Some people consider them to be the most influential
+#act of the rock era. Indeed, they were included in Time magazine's compilation of 
+#the 20th Century's 100 most influential people.
+
+#The band underwent many line-up changes, culminating in 1962 with the line-up of:
+#John Lennon, Paul McCartney, George Harrison, and Richard Starkey (better known as Ringo Starr).
+
+
+#Write a program that reflects these changes and lets you practice with the concept of lists. Your task is to:
+
+    #step 1: create an empty list named beatles;
+    #step 2: use the append() method to add the following members of the band to the list: 
+        #John Lennon, Paul McCartney, and George Harrison;
+    #step 3: use the for loop and the append() method to prompt the user to add:
+        #the following members of the band to the list: Stu Sutcliffe, and Pete Best;
+    #step 4: use the del instruction to remove Stu Sutcliffe and Pete Best from the list;
+    #step 5: use the insert() method to add Ringo Starr to the beginning of the list.
+
+#By the way, are you a Beatles fan? (The Beatles is one of Greg's favorite bands. 
+#But wait...who's Greg...?)
+
+import time
+
+
+beatles = []
+print("Step1", beatles)
+print()
+time.sleep(2)
+
+beatles.append("John Lennon")
+beatles.append("Paul McCartney")
+beatles.append("George Harrison")
+print("Step2", beatles)
+print()
+
+for i in range(len(beatles) - 1):
+
+    new_member = input("Add a new member:")
+    beatles.append(new_member)
+
+time.sleep(3)    
+print("Step3", beatles)
+print()
+print()
+
+
+
+del beatles[4]
+del beatles[3]
+print("Stu and Pete left so the and was left with:")
+time.sleep(1)
+print("Step4", beatles)
+time.sleep(3)
+
+
+print("The band was then led by RINGOOOO!!!!!")
+time.sleep(1)
+beatles.insert(0, "Ringo Starr")
+print("Step5" + "This was then the new lineup for the beatles")
+time.sleep(2)
+print("The fab", len(beatles), beatles)
+
+
+
+
+#3.6.6
+
+#Scenario
+
+#Imagine a list ‒ not very long, not very complicated, just a simple list containing some 
+#integer numbers. Some of these numbers may be repeated, and this is the clue.
+#We don't want any repetitions. We want them to be removed.
+
+#Your task is to write a program which:
+    #removes all the number repetitions from the list.
+    #The goal is to have a list in which all the numbers appear not more than once.
+
+#Note: assume that the source list is hard-coded inside the code ‒ you don't have to 
+    #enter it from the keyboard. Of course, you can improve the code and add a part that 
+    #can carry out a conversation with the user and obtain all the data from her/him.
+
+#Hint: we encourage you to create a new list as a temporary work area ‒ you don't need 
+#to update the list in situ.
+
+my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
+
+# Write your code here.
+
+print("The list with unique elements only:")
+print(my_list)
+
