@@ -25,43 +25,69 @@
 
 import time
 
-
+#Start with a bland list.
 beatles = []
-print("Step1", beatles)
-print()
+print("The year was 1960...", beatles)
 time.sleep(2)
+print("The year was 1961...", beatles)
+print()
 
+#Append 3 members to the "beatles" list.
 beatles.append("John Lennon")
 beatles.append("Paul McCartney")
 beatles.append("George Harrison")
-print("Step2", beatles)
+time.sleep(2)
+print("In the year 1962 Beatles was formed by 3 members:", beatles)
+print()
 print()
 
-for i in range(len(beatles) - 1):
 
-    new_member = input("Add a new member:")
+time.sleep(2)
+
+#Lets the user to input the number(int) of add_members.
+print("The band decided to add some new members")
+add_member = int(input("so, they added:"))
+print("members.")
+print()
+
+#This del_member variable will be used to do the range.
+del_members = add_member+1
+
+#This will let the user input the new members' name for "add_member" times and the new_member will append to the "beatles" list. 
+for i in range(add_member):
+
+    new_member = input("Who were:")
     beatles.append(new_member)
 
 time.sleep(3)    
-print("Step3", beatles)
+print("This is how the new Beatles lined up", beatles)
 print()
 print()
-
-
-
-del beatles[4]
-del beatles[3]
-print("Stu and Pete left so the and was left with:")
-time.sleep(1)
-print("Step4", beatles)
 time.sleep(3)
 
-
-print("The band was then led by RINGOOOO!!!!!")
-time.sleep(1)
-beatles.insert(0, "Ringo Starr")
-print("Step5" + "This was then the new lineup for the beatles")
+#Deletes the "new_member" using the "del_members" variable as finish point.
+print("One day Stu and Pete decided to leave the band.")
+del beatles[-1:-del_members:-1]
 time.sleep(2)
+print("So Beatles was again left with:")
+time.sleep(1)
+print(beatles)
+print()
+time.sleep(3)
+
+#Inserts Ringo to beatles[0].
+print("One fine day a guy known by the name RINGOOOO joined the band")
+beatles.insert(0, "Ringo Starr")
+print()
+print()
+print("This is how the new Beatles looked like")
+time.sleep(2)
+print("3")
+time.sleep(1)
+print("2")
+time.sleep(1)
+print("1")
+time.sleep(3)
 print("The fab", len(beatles), beatles)
 
 
