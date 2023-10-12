@@ -88,8 +88,15 @@ print("The fab", len(beatles), beatles)
 
 my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
 
-# Write your code here.
+#u_list will be blank to begin with.
+u_list = []
+
+
+#This will check whether my_list[i] "is not present" in u_list. If the condition is True my_list[i] is appended to u_list.
+for i in range(len(my_list)):
+    if my_list[i] not in u_list:
+        u_list.append(my_list[i])
 
 print("The list with unique elements only:")
-print(my_list)
+print(u_list)
 
