@@ -1,0 +1,44 @@
+def is_year_leap(yr):
+   if yr < 1582:
+        return None
+    
+    
+   if yr % 4 != 0:
+       print("It's a common year")
+       return False
+
+   elif yr % 100 != 0:
+        print("It's a leap year")
+        return True
+   elif yr % 400 != 0:
+        print("It's a common year")
+        return False
+   else:
+        print("It's a leap year")
+        return True
+
+def days_in_month(mo):
+    #there is only four possible outcomes here 30,31,28,29
+   if mo < 1 or mo > 12:
+       return None
+   
+   if mo==1 or mo==3 or mo==5 or mo==7 or mo==8 or mo==10 or mo==12:
+       return 31
+   elif mo==4 or mo==6 or mo==9 or mo==11:
+       return 30
+
+   elif is_year_leap(yr) and mo==2:
+       return 29
+   elif mo==2:
+       return 28
+   
+    #step four for 29 days - get the easier stuff working first!
+  
+test_years = [1900, 2000, 2016, 1987]
+test_months = [2, 2, 1, 11]
+test_results = [28, 29, 31, 30]
+for i in range(len(test_years)):
+    yr = test_years[i]
+    mo = test_months[i]
+    result = days_in_month(mo)
+    print(yr, mo, "->", result)
